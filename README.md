@@ -18,3 +18,5 @@ Troubleshooting & FAQ
         My CSS is not where I'd want it to be, but I wanted to focus on the functionality first. I planned on putting images in each of the story node objects to display when you reach each page, but I couldn't get it all to work before the deadline. 
     ATTACK
         I wanted to add actual attack functionality for the two villain instances. Ideally attack buttons populate and you can attack and defeat the villains through strategy. If that isn't possible, I wanted to see if I could have the computer randomly determine a winner or a loser. Maybe some Math.random/accuracy/attack functionality. 
+    SATCHEL 
+        I also want to add a button to where you can view which items are currently in your satchel! Just to give it a bit more interactivity. 

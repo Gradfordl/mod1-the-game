@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+h1{
+    margin: 100px;
+}
 body {
     padding: 0;
     margin: 0;
@@ -13,24 +16,30 @@ body {
     height: 100vh;
     background-color: lightsteelblue;
 }
-#modal {
+/* #modal {
     display: none;
-}
-.container {
+} */
+#container {
+    display: none;
     border: 2px solid black;
     background-color: lightblue;
     width: 80%;
-    padding: 10px;
+    padding: 20px;
+    align-items: center;
+    line-height: 1.5;
+    font-size: large;
 }
 #button-container {
-    display: flex;
-    margin: 20px;
-    border: 1px dotted black;
+    display: none;
+    align-items: center;
+    width: fit-content;
+    border: 2px solid pink;
 }
 .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
+    display: grid flex;
+    align-items: center;
+    grid-template-columns:max-content;
+    gap: 15px;
     margin-top: 20px;
 }
 .btn {
@@ -38,8 +47,7 @@ body {
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
-    outline: none;
 }
 .btn:hover {
-    border-color: pink;
+    border-color: red;
 }

@@ -1,6 +1,6 @@
 #WIZARD QUEST
 
-https://github.com/Gradfordl/mod1-the-game || gradfordl.github.io
+https://gradfordl.github.io/mod1-the-game/
 
     You are a wizard setting off on a quest, presented with a myriad of options that will ultimately determine your fate! Make the right choices! 
 
@@ -14,7 +14,7 @@ https://github.com/Gradfordl/mod1-the-game || gradfordl.github.io
 ##Troubleshooting & FAQ 
 
     ###RESET BUTTON 
-    
+
         I need to correct my reset button to where it takes you fully out of the game, to come back in, re-input name and start over. 
     ###ERROR HANDLING
 

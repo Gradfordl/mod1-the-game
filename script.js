@@ -1,3 +1,4 @@
+//Create Character classes
 class Character {
     constructor(name, role, ability,){
         this.name = name;
@@ -22,18 +23,19 @@ function genWizName() {
    let wizName = userName + rdmLastName;
    return wizName;
 }
-
+//Create characters
 const wizard = new Character (genWizName(), "Professor of the Dark Arts", "dark magic");
 
 const manticore = new Villain ("Mighty Manticore", "Keeper of the Mountains", "will eat you.");
 
 const troll = new Character ("Angry Angus", "Keeper of the Bridge", "fighting");
 
+//define my HTML elements
 const containerEl = document.getElementById("container");
 const textEl = document.getElementById("text");
 const optionBtnEl = document.getElementById("button-container");
-
 const startBtn = document.getElementById("start");
+//Start button details
 startBtn.addEventListener("click", (evt) => {
     console.log("clicked!");
     containerEl.style.display = "flex";
@@ -47,15 +49,21 @@ function startGame() {
     containerEl.style.display = "none";
     startBtn.style.display = "flex";
 }
+
 function getText(idx) {
+    //Pull text from node using node ids as an index
     const textNode = storyNodes.find(textNode => textNode.id === idx)
+    // Display storyline text in container
     textEl.textContent = textNode.text
+    //Remove option buttons after click
     while (optionBtnEl.firstChild) {
         optionBtnEl.removeChild(optionBtnEl.firstChild);
     }
     textNode.options.forEach( option => {
         if(showOption(option)){
+            //Add new option buttons
             const button = document.createElement("button");
+            //Add node specific option text to buttons
             button.textContent = option.text;
             button.classList.add("btn");
             button.addEventListener("click", () => selectOption(option));
@@ -63,30 +71,35 @@ function getText(idx) {
         }
     })
 }
+
+// Determine which options to show to the player. If no conditions required or if required condition is met, show option.
 function showOption(option) {
     return option.requiredState == null || option.requiredState(state)
 }
 
+//Generate nextText based on which option is selected
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
     state = Object.assign(state, option.setState);
     getText(nextTextNodeId);
 }
 
+//Story line objects
 const storyNodes = [
-        {
+        { //INTRO
         id: 0, 
-        text: "Welcome to Wizard Quest",
+        text: `Welcome to Wizard Quest! You are ${wizard.name}, and today you set off on a quest with a myriad of choices that will ultimately determine your fate.  Are you ready to begin?`,
         options: [
             {
                 text: "Lets Get It!",
+                setState: {},
                 nextText: 1
             }
         ]
     },
     {
         id: 1,
-        text:`Hello ${wizard.name},  are you ready to set off on your quest?`,
+        text:`${wizard.name}, which path will you choose?`,
         options: [
             {
                 text: "Take the Mountain Path",
@@ -116,7 +129,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ],
     },
@@ -137,7 +150,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -160,7 +173,7 @@ const storyNodes = [
                 text: `Pay toll`,
                 requiredState: (currentState) => currentState.goldCoin,
                 setState: {goldCoin: false },
-                nextText: 6
+                nextText: 8
             },
             {//Fight troll and die
                 text: "Fight Troll",
@@ -172,7 +185,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -193,7 +206,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -212,7 +225,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -226,7 +239,7 @@ const storyNodes = [
             },
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -245,7 +258,7 @@ const storyNodes = [
                 },
                 {
                     text: "Restart",
-                    nextText: 1
+                    nextText: 0
                 }
             ]
         },
@@ -255,7 +268,7 @@ const storyNodes = [
         options: [
             {
                 text: "That was fun",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -265,7 +278,7 @@ const storyNodes = [
         options: [
             {
                 text: "Restart",
-                nextText: 1
+                nextText: 0
             }
         ]
     },
@@ -275,7 +288,7 @@ const storyNodes = [
             options: [
                 {
                     text: "Restart",
-                    nextText: 1
+                    nextText: 0
                 }
             ]
         },
@@ -285,7 +298,7 @@ const storyNodes = [
                 options: [
                     {
                         text: "Restart",
-                        nextText: 1
+                        nextText: 0
                     }
                 ]
             }

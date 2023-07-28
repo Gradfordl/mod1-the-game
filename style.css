@@ -1,3 +1,6 @@
+/* *, *::before, *::after  
+created pseudo-element that is first child of of selected element
+used to apply css properties JUST before/after the content WITHIN the matching element.*/
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

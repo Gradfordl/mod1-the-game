@@ -19,10 +19,10 @@ let wizSuffix = [" The Almighty", " The Great", " The Magician", " The Wizard", 
 let userName = prompt("To get started, please enter your name:")
 
 function genWizName() {
-   let rdmLastName = wizSuffix[Math.floor(Math.random() * 7)];
-   let wizName = userName + rdmLastName;
-   return wizName;
-}
+        let rdmLastName = wizSuffix[Math.floor(Math.random() * 7)];
+        let wizName = userName + rdmLastName;
+        return wizName;
+    }
 //Create characters
 const wizard = new Character (genWizName(), "Professor of the Dark Arts", "dark magic");
 
@@ -35,6 +35,7 @@ const containerEl = document.getElementById("container");
 const textEl = document.getElementById("text");
 const optionBtnEl = document.getElementById("button-container");
 const startBtn = document.getElementById("start");
+const itemBtn = document.getElementById("satchel-div");
 //Start button details
 startBtn.addEventListener("click", (evt) => {
     console.log("clicked!");
@@ -42,6 +43,10 @@ startBtn.addEventListener("click", (evt) => {
     optionBtnEl.style.display = "flex";
     startBtn.style.display = "none";
 });
+
+itemBtn.addEventListener("click", () => {
+    s
+})
 
 function startGame() {
     state = {};

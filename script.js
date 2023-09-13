@@ -35,7 +35,7 @@ const containerEl = document.getElementById("container");
 const textEl = document.getElementById("text");
 const optionBtnEl = document.getElementById("button-container");
 const startBtn = document.getElementById("start");
-const itemBtn = document.getElementById("satchel-div");
+// const itemBtn = document.getElementById("items");
 //Start button details
 startBtn.addEventListener("click", (evt) => {
     console.log("clicked!");
@@ -43,10 +43,6 @@ startBtn.addEventListener("click", (evt) => {
     optionBtnEl.style.display = "flex";
     startBtn.style.display = "none";
 });
-
-itemBtn.addEventListener("click", () => {
-    s
-})
 
 function startGame() {
     state = {};
@@ -82,6 +78,16 @@ function showOption(option) {
     return option.requiredState == null || option.requiredState(state)
 }
 
+// //Convert satchel object into array to display in DOM
+// const satchelStatus = Object.values(state);
+
+// let satchel = document.getElementById("satchel-state");
+// //Loop through array to display each satchel item in DOM element
+// satchelStatus.forEach((item) => {
+//     let li = document.createElement("li");
+//     li.innerText = item;
+//     satchel.appendChild(li);
+// })
 //Generate nextText based on which option is selected
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
